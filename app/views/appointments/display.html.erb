@@ -1,0 +1,29 @@
+<div id="Grid" class="appointment-grid">
+  <% @techs.each do |tech| %>
+    <div onclick="" style="grid-column: tech-<%= tech.id %>-head; grid-row: tech-<%= tech.id %>-head / span 5" class="tech-head"><%= tech.name %></div>
+  <% end %>
+
+  <div style="grid-row: appointment-600" class="time start-600">6:00</div>
+  <div style="grid-row: appointment-700" class="time start-700">7:00</div>
+  <div style="grid-row: appointment-800" class="time start-800">8:00</div>
+	<div style="grid-row: appointment-900" class="time start-900">9:00</div>
+	<div style="grid-row: appointment-1000" class="time start-1000">10:00</div>
+	<div style="grid-row: appointment-1100" class="time start-1100">11:00</div>
+	<div style="grid-row: appointment-1200" class="time start-1200">12:00</div>
+	<div style="grid-row: appointment-1300" class="time start-1300">13:00</div>
+	<div style="grid-row: appointment-1400" class="time start-1400">14:00</div>
+	<div style="grid-row: appointment-1500" class="time start-1500">15:00</div>
+	<div style="grid-row: appointment-1600" class="time start-1600">16:00</div>
+
+  <% @work_order.each_with_index do |order| %>
+    <div 
+      style="grid-row: <%= order[:start_time] + '/ span ' + (order[:duration] / 5).to_s %>; grid-column: <%= order[:tech_number] %>;" 
+      class="appointment <%= "appointment-time-" + order[:start_time] %> <%= order[:tech_number] %>"
+    >
+      <p><%= 'Location: ' + order[:location].name + ', ' + order[:location].city %></p>
+      <p><%= 'Appointment Time: ' + order[:work_order].time.split(' ')[1] %></p>
+      <p><%= "$" + order[:work_order].price.to_s + ".00" %></p>
+    </div>
+  <% end %>
+</div>
+
