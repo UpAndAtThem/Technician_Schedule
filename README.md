@@ -1,6 +1,6 @@
 # SCHEDULER README
 
-Welcome to SHEDULR a ultra modern interface for technicians to check their daily appointments and check to see the amount of time before and after appointments
+Welcome to SHEDULR a ultra modern interface for technicians to check their daily appointments and check to see the amount of time between scheduled appointments
 
 ## Getting Started
 
