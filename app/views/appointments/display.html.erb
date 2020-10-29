@@ -1,4 +1,4 @@
-<div id="Grid" class="appointment-grid">
+<div id="Grid" onclick="appointmentTimeHandler" class="appointment-grid">
   <% @techs.each do |tech| %>
     <div onclick="" style="grid-column: tech-<%= tech.id %>-head; grid-row: tech-<%= tech.id %>-head / span 5" class="tech-head"><%= tech.name %></div>
   <% end %>
