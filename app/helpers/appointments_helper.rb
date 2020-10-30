@@ -4,12 +4,13 @@ module AppointmentsHelper
 
     4.times do |tech_id|
       work_day = Time.new 2019, 10, 1, 6
+      # the number of 5 minute chunks between 6:00 and 16:00
       121.times do |time|
         hour = work_day.hour.to_s
         min = work_day.min.to_s.length == 1 ? '0' + work_day.min.to_s : work_day.min.to_s
         work_day = work_day + (60 * 5)
 
-        res << "<div class='invisible tech-#{tech_id + 1} #{hour}:#{min}' style='grid-column: tech#{tech_id + 1}; grid-row: appointment-#{hour}#{min}'></div>"
+        res << "<div class='invisible tech-#{tech_id + 1} start-#{hour}#{min}' style='grid-column: tech#{tech_id + 1}; grid-row: appointment-#{hour}#{min}'></div>"
       end
     end
 
